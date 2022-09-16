@@ -48,7 +48,7 @@ export const createNftContract = async (
     const res = await axios.post<ICreateNftContractRes>('nfts/contract', {
       ...contractInfo,
       key: process.env.THENTIC_API_KEY,
-      redirect_url: 'https://vercel.com/lovecodeing1995',
+      redirect_url: `${process.env.THENTIC_API_KEY}nft-contract`,
     });
     return res.data;
   } catch (error) {
@@ -96,7 +96,7 @@ export const mintNft = async (nftInfo: any) => {
     const res = await axios.post<ICreateNftContractRes>('nfts/mint', {
       ...nftInfo,
       key: process.env.THENTIC_API_KEY,
-      redirect_url: 'https://vercel.com/lovecodeing1995',
+      redirect_url: `${process.env.THENTIC_API_KEY}nft`,
     });
     return res.data;
   } catch (error) {
